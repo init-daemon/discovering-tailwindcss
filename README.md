@@ -69,3 +69,42 @@ module.exports = {
   }
 ```
 # Container
+## utilisation et avec responsive
+- ``.container``: width à 100%,
+- ``sm:container``: on applique width à 100% si width <= 640px(max-width)
+- ``md:container``: on applique width à 100% si width <= 768px(max-width)
+- ``lg:container``: on applique width à 100% si width <= 1024px(max-width)
+- ``xl:container``: on applique width à 100% si width <= 1280px(max-width)
+- ``2xl:container``: on applique width à 100% si width <= 1536px(max-width)
+  
+## Definir des propriétés par défaut
+```js tailwind.config.js
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  theme: {
+    container: {
+      center: true,
+      padding: "2rem",//horizongal pading
+
+},
+  },
+}
+```
+ou definition de padding par défaut pour chque breackpoint
+```js tailwind.config.js
+module.exports = {
+  theme: {
+    container: {
+      padding: {
+        DEFAULT: '1rem',
+        sm: '2rem',
+        lg: '4rem',
+        xl: '5rem',
+        '2xl': '6rem',
+      },
+    },
+  },
+};
+```
+
+##  Les colonnes
