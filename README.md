@@ -45,3 +45,27 @@ npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch
 </body>
 </html>
 ```
+
+# Layout
+## Aspect ratio
+Utilitaires pour contrôler le rapport hauteur/largeur d'un élément.
+- `aspect-auto`
+- `aspect-square`: 1 / 1;
+- `aspect-video` 16 / 9;
+- ``aspect-[4/3]``: definir une valeur arbitraire
+- `md:aspect-square`: si media querie medium(à partir de l'écran d'une largeur minimale de 768 pixels et au-delà.), appliquer la ration
+```html
+<video src="../assets/Jack'Dad - Get Out.mp4" class="w-full aspect-video md:aspect-square"></video>
+```
+### Customisation du thème
+```js tailwind.config.js
+module.exports = {
+  theme: {
+    extend: {
+      aspectRatio: {
+        '4/3': '4 / 3',
+      },
+    }
+  }
+```
+# Container
