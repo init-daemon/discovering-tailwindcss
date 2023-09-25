@@ -187,3 +187,28 @@ remplit chaque colonne jusqu'à atteindre 3 colonne, le html precedent donne:
     </div>
 </div>
 ```
+
+## Display
+classes | propriétés
+---|---
+__block__ | ``display: block;``
+__inline-block__ | ``display: inline-block;``
+__inline__ | ``display: inline;``
+__flex__ | ``display: flex;``
+__inline-flex__ | ``display: inline-flex;``
+__table__ | ``display: table;``
+__inline-table__ | ``display: inline-table;``
+__table-caption__ | ``display: table-caption;``
+__table-cell__ | ``display: table-cell;``
+__table-column__ | ``display: table-column;``
+__table-column-group__ | ``display: table-column-group;``
+__table-footer-group__ | ``display: table-footer-group;``
+__table-header-group__ | ``display: table-header-group;``
+__table-row-group__ | ``display: table-row-group;``
+__table-row__ | ``display: table-row;``
+__flow-root__ | ``display: flow-root;``
+__grid__ | ``display: grid;``
+__inline-grid__ | ``display: inline-grid;``
+__contents__ | ``display: contents;``
+__list-item__ | ``display: list-item;``
+__hidden__ | ``display: none;``
