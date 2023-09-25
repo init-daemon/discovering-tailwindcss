@@ -109,8 +109,8 @@ module.exports = {
 ```
 
 ##  Les colonnes
-- ``columns-{count}``
-- count: soit [] est une intervvalle: [1-12], auto, 3xs, 2xs, xs, sm, md, lg, xl, [2-7]xl
+- ``columns-$count``
+- $count: soit [] est une intervvalle: [1-12], auto, 3xs, 2xs, xs, sm, md, lg, xl, [2-7]xl
 ```html
     <div class="columns-3">
         <p>1</p>
@@ -128,15 +128,15 @@ remplit chaque colonne jusqu'à atteindre 3 colonne, le html precedent donne:
 
 ## Break-[after|before|inside]
 ### resumé
-- ``break-[after|before|inside]-{value}``
-- **value pour after, before, inside**: auto, avoid, avoid-page, 
-- **value seulement pour after et before**: all, page, left, right, column
-- **value seulement pour inside**: avoid-column
+- ``break-[after|before|inside]-$value``
+- **$value pour after, before, inside**: auto, avoid, avoid-page, 
+- **$value seulement pour after et before**: all, page, left, right, column
+- **$value seulement pour inside**: avoid-column
 
 ## Box decoration break
 > Control le comportement de la boîte lorsque'elle est fragmentée
-- ``box-decoration-{value}``
-- value: 
+- ``box-decoration-$value``
+- $value: 
   - slice: la boite peut etre fragmentée entre les sauts de page ou de colonnes(bordure, arrière-plans peut etre coupé) 
   - clone: la boite doit être clonée lorsqu'elle est fragmentée(contraire au slice)
 ```html
@@ -341,15 +341,15 @@ __relative__ | ``position: relative;``
 __sticky__ | ``position: sticky;``
 
 ## Placement de l'element positionnée
-* ``[top|right|bottom|left|inset|start|end]-[size]``
-* size:
+* ``[top|right|bottom|left|inset|start|end]-$size``
+* $size:
   * auto: auto
   * 0: 0px
   * px: 1px;
   * size en nombre: 1unité = 0.25rem = 4px
   * 1/2 et 2/4: 50%;
   * 1/3: 33.33333%; 
-  * 2/3: 66.66666%; 
+  * 2/3: 66.66666%;
   * 1/4: 25%;
   * 3/4: 75%; 
   * full: 100%;
@@ -358,3 +358,47 @@ class | properties
 ---|---
 ``inset-x-{value}`` | left et right à {value} unité
 ``inset-y-{value}`` | top et bottom à {value} unité
+
+## Visibility
+class | props | explication
+---|---|---
+__visible__ | ``visibility: visible`` | Par défaut, rend l'élément visible.
+__invisible__ | ``visibility: hidden`` | Rend l'élément invisible tout en laissant un espace vide pour lui dans la mise en page.
+__collapse__ | ``visibility: collape`` | Principalement utilisé pour les tableaux, rend la cellule ou la colonne invisible tout en maintenant la structure du tableau.
+
+## z-index
+### cheat sheet de base
+* ``z-$index``
+* ``-z-$index`` pour les valeurs negatives
+* $index:  0-50, auto
+  
+### personnalisé z-index
+```js tailwind.config.js
+module.exports = {
+  theme: {
+    extend: {
+      zIndex: {
+        'zato': '100',
+      }
+    }
+  }
+}
+```
+pour l'utiliser: z-zato
+```html
+<style>
+    .teste {
+        border: black solid 2px;
+        border-radius: 100%;
+        background-color: aquamarine;
+        position: relative;
+    }
+</style>
+<div class="flex">
+    <div class="teste hover:z-zato z-40 p-5">05</div>
+    <div class="teste hover:z-zato z-30 p-5 right-7">04</div>
+    <div class="teste hover:z-zato z-20 p-5 right-14">03</div>
+    <div class="teste hover:z-zato z-10 p-5 right-24">02</div>
+    <div class="teste hover:z-zato p-5 right-28">01</div>
+</div>
+```
