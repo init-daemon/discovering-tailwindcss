@@ -108,3 +108,43 @@ module.exports = {
 ```
 
 ##  Les colonnes
+- ``columns-{count}``
+- count: soit [] est une intervvalle: [1-12], auto, 3xs, 2xs, xs, sm, md, lg, xl, [2-7]xl
+```html
+    <div class="columns-3">
+        <p>1</p>
+        <p>2</p>
+        <p>3</p>
+        <p>4</p>
+        <p>5</p>
+    </div>
+```
+remplit chaque colonne jusqu'à atteindre 3 colonne, le html precedent donne:
+```txt
+1 3 5
+2 4
+```
+
+## Break-[after|before|inside]
+### resumé
+- ``break-[after|before|inside]-{value}``
+- **value pour after, before, inside**: auto, avoid, avoid-page, 
+- **value seulement pour after et before**: all, page, left, right, column
+- **value seulement pour inside**: avoid-column
+
+## Box decoration break
+> Control le comportement de la boîte lorsque'elle est fragmentée
+- ``box-decoration-{value}``
+- value: 
+  - slice: la boite peut etre fragmentée entre les sauts de page ou de colonnes(bordure, arrière-plans peut etre coupé) 
+  - clone: la boite doit être clonée lorsqu'elle est fragmentée(contraire au slice)
+```html
+<span class="box-decoration-slice bg-gradient-to-r from-indigo-600 to-pink-500 text-white px-2 ...">
+  Hello<br />
+  World
+</span>
+<span class="box-decoration-clone bg-gradient-to-r from-indigo-600 to-pink-500 text-white px-2 ...">
+  Hello<br />
+  World
+</span>
+```
