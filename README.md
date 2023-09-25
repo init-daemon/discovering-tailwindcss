@@ -148,3 +148,42 @@ remplit chaque colonne jusqu'à atteindre 3 colonne, le html precedent donne:
   World
 </span>
 ```
+
+## Box sizing
+> Permet de definir coment la largeur et la hateur d'un élément HTML sont calculées, notamment en ce qui concerne les marges, les bordures et le rembourrage (padding).
+- ``box-border``: 
+  - css: ``box-sizing: border-box;``
+  - largeur et hauteur incluent: contenu, padding, bordure
+- ``box-content`` (par défaut)
+  - css: ``box-sizing: content-box;``
+  - largeur et hauteur seront calculé uniquement à partir du contenu sans inclure la bordure, le padding ou les marges
+```html
+<style>
+.avec-content-box {
+    border: 2px solid red;
+    padding: 20px;
+    width: 200px;
+    height: 100px;
+    background-color: lightblue;
+}
+
+.avec-border-box {
+    border: 2px solid green;
+    padding: 20px;
+    width: 200px;
+    height: 100px;
+    background-color: lightcoral;
+}
+</style>
+<!--....-->
+<div class="my-4">
+    <div class="avec-content-box box-content">
+        <p>content box</p>
+    </div>
+</div>
+<div class="my-4">
+    <div class="avec-border-box box-border">
+        <p>border box</p>
+    </div>
+</div>
+```

@@ -6,17 +6,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Descovering taillwindcss</title>
     <link rel="stylesheet" href="../dist/output.css">
+    <style>
+        /* Ajoutez des styles personnalisés ici */
+        .avec-content-box {
+            border: 2px solid red;
+            padding: 20px;
+            width: 200px;
+            height: 100px;
+            background-color: lightblue;
+        }
+
+        .avec-border-box {
+            border: 2px solid green;
+            padding: 20px;
+            width: 200px;
+            height: 100px;
+            background-color: lightcoral;
+        }
+    </style>
 </head>
 
 <body>
-    <span class="box-decoration-slice bg-gradient-to-r from-indigo-600 to-pink-500 text-white px-2 ...">
-        Hello<br />
-        World
-    </span>
-    <span class="box-decoration-clone bg-gradient-to-r from-indigo-600 to-pink-500 text-white px-2 ...">
-        Hello<br />
-        World
-    </span>
+    <div class="my-4">
+        <div class="avec-content-box box-content">
+            <p>content box</p>
+        </div>
+    </div>
+    <div class="my-4">
+        <div class="avec-border-box box-border">
+            <p>border box</p>
+        </div>
+    </div>
 </body>
 
 </html>
