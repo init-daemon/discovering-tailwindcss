@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carte Interactive</title>
+    <style>
+        /* Style pour le bouton interactif */
+        .interactive-button {
+            background-color: blue;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Carte Interactive</h1>
+
+    <!-- Bouton interactif -->
+    <button class="interactive-button">Cliquez-moi</button>
+
+    <p>Autre contenu interactif...</p>
+
+    <script>
+        // JavaScript pour réagir au clic sur le bouton
+        document.querySelector('.interactive-button').addEventListener('click', function () {
+            alert('Bouton cliqué dans l\'iframe !');
+        });
+    </script>
+</body>
+
+</html>

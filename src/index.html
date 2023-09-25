@@ -7,35 +7,25 @@
     <title>Descovering taillwindcss</title>
     <link rel="stylesheet" href="../dist/output.css">
     <style>
-        /* Ajoutez des styles personnalisés ici */
-        .avec-content-box {
-            border: 2px solid red;
-            padding: 20px;
-            width: 200px;
-            height: 100px;
-            background-color: lightblue;
-        }
-
-        .avec-border-box {
-            border: 2px solid green;
-            padding: 20px;
-            width: 200px;
-            height: 100px;
-            background-color: lightcoral;
+        img {
+            transition: all 0.3s ease-in-out;
+            cursor: pointer;
+            /* Définissez la transition pour la propriété object-position */
         }
     </style>
 </head>
 
 <body>
-    <div class="my-4">
-        <div class="avec-content-box box-content">
-            <p>content box</p>
-        </div>
-    </div>
-    <div class="my-4">
-        <div class="avec-border-box box-border">
-            <p>border box</p>
-        </div>
+    <div class="flex justify-between">
+        <img class="object-none hover:object-left-top bg-yellow-300 w-24 h-24" src="../assets/img/i (1).jpg">
+        <img class="object-none hover:object-top bg-yellow-300 w-24 h-24" src="../assets/img/i (1).jpg">
+        <img class="object-none hover:object-right-top bg-yellow-300 w-24 h-24" src="../assets/img/i (1).jpg">
+        <img class="object-none hover:object-left bg-yellow-300 w-24 h-24" src="../assets/img/i (1).jpg">
+        <img class="object-none hover:object-center bg-yellow-300 w-24 h-24" src="../assets/img/i (1).jpg">
+        <img class="object-none hover:object-right bg-yellow-300 w-24 h-24" src="../assets/img/i (1).jpg">
+        <img class="object-none hover:object-left-bottom bg-yellow-300 w-24 h-24" src="../assets/img/i (1).jpg">
+        <img class="object-none hover:object-bottom bg-yellow-300 w-24 h-24" src="../assets/img/i (1).jpg">
+        <img class="object-none hover:object-right-bottom bg-yellow-300 w-24 h-24" src="../assets/img/i (1).jpg">
     </div>
 </body>
 

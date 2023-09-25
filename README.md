@@ -1,4 +1,5 @@
 "# discovering-taillwindcss" 
+> Les titres contenant ? ont besoin d'exmple concret plus precis et claire
 # Editor setup
 ## Pour VSCode: 
 Taillwind CSS IntelliSense
@@ -212,3 +213,82 @@ __inline-grid__ | ``display: inline-grid;``
 __contents__ | ``display: contents;``
 __list-item__ | ``display: list-item;``
 __hidden__ | ``display: none;``
+
+## Floats
+> Utilitaires pour contrôler l'habillage du contenu autour d'un élément.
+``float-[right|left|none]``
+
+## clear
+> Utilitaires pour contrôler l'habillage du contenu autour d'un élément
+``clear[left|right|both|none]``
+
+## ?Isolation
+> Permet de controler l'isoaltion d'un élément par rapport à d'autres éléments, notamment en ce qui concerne la création d'un contexte d'empilement séparé pour cet élément.
+- isolate: `isolation: isolate;`
+- isolation-auto: `isolation: auto;`
+
+## Object fit
+> est utilisée pour définir comment une image ou un autre élément rempli d'une boîte (comme un conteneur ``<div>`` ou un élément ``<img>``) doit être ajusté en fonction de la taille de la boîte.
+classes | propriétés | explication
+---|---
+__object-contain__ | ``object-fit: contain;`` 
+__object-cover__ | ``object-fit: cover;`` 
+__object-fill__ | ``object-fit: fill;`` 
+__object-none__ | ``object-fit: none;`` 
+__object-scale-down__ | ``object-fit: scale-down;`` 
+illustration de la difference entre les props
+```html
+<div class="flex">
+    <div class="bg-indigo-300" style="width: 200px">
+        <img class="object-cover h-48" src="../assets/img/i (1).jpg">
+    </div>
+    <div class="bg-indigo-300" style="width: 200px">
+        <img class="object-contain h-48" src="../assets/img/i (1).jpg">
+    </div>
+    <div class="bg-indigo-300" style="width: 200px">
+        <img class="object-fill h-48" src="../assets/img/i (1).jpg">
+    </div>
+    <div class="bg-indigo-300" style="width: 200px">
+        <img class="object-scale-down h-48" src="../assets/img/i (1).jpg">
+    </div>
+    <div class="bg-indigo-300" style="width: 200px">
+        <img class="object-none h-48" src="../assets/img/i (1).jpg">
+    </div>
+</div>
+```
+
+## Object position
+> La propriété CSS object-position permet de définir la position d'un élément rempli (comme une image) à l'intérieur de son conteneur.
+classes | propriétés
+---|---
+__object-bottom__ | ``object-position: bottom;``
+__object-center__ | ``object-position: center;``
+__object-left__ | ``object-position: left;``
+__object-left-bottom__ | ``object-position: left bottom;``
+__object-left-top__ | ``object-position: left top;``
+__object-right__ | ``object-position: right;``
+__object-right-bottom__ | ``object-position: right bottom;``
+__object-right-top__ | ``object-position: right top;``
+__object-top__ | ``object-position: top;``
+
+Voir les differences entre les valeurs de la propriétés object-position, on hover, par rapport à l'état par défaut 
+```html
+<style>
+img {
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    /* Définissez la transition pour la propriété object-position */
+}
+</style>
+<div class="flex justify-between">
+    <img class="object-none hover:object-left-top bg-yellow-300 w-24 h-24" src="../assets/img/i (1).jpg">
+    <img class="object-none hover:object-top bg-yellow-300 w-24 h-24" src="../assets/img/i (1).jpg">
+    <img class="object-none hover:object-right-top bg-yellow-300 w-24 h-24" src="../assets/img/i (1).jpg">
+    <img class="object-none hover:object-left bg-yellow-300 w-24 h-24" src="../assets/img/i (1).jpg">
+    <img class="object-none hover:object-center bg-yellow-300 w-24 h-24" src="../assets/img/i (1).jpg">
+    <img class="object-none hover:object-right bg-yellow-300 w-24 h-24" src="../assets/img/i (1).jpg">
+    <img class="object-none hover:object-left-bottom bg-yellow-300 w-24 h-24" src="../assets/img/i (1).jpg">
+    <img class="object-none hover:object-bottom bg-yellow-300 w-24 h-24" src="../assets/img/i (1).jpg">
+    <img class="object-none hover:object-right-bottom bg-yellow-300 w-24 h-24" src="../assets/img/i (1).jpg">
+</div>
+```
