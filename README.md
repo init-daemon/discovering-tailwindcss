@@ -229,13 +229,15 @@ __hidden__ | ``display: none;``
 
 ## Object fit
 > est utilisée pour définir comment une image ou un autre élément rempli d'une boîte (comme un conteneur ``<div>`` ou un élément ``<img>``) doit être ajusté en fonction de la taille de la boîte.
-classes | propriétés | explication
+
+classes | propriétés
 ---|---
 __object-contain__ | ``object-fit: contain;`` 
 __object-cover__ | ``object-fit: cover;`` 
 __object-fill__ | ``object-fit: fill;`` 
 __object-none__ | ``object-fit: none;`` 
 __object-scale-down__ | ``object-fit: scale-down;`` 
+
 illustration de la difference entre les props
 ```html
 <div class="flex">
@@ -259,6 +261,7 @@ illustration de la difference entre les props
 
 ## Object position
 > La propriété CSS object-position permet de définir la position d'un élément rempli (comme une image) à l'intérieur de son conteneur.
+
 classes | propriétés
 ---|---
 __object-bottom__ | ``object-position: bottom;``
@@ -292,3 +295,66 @@ img {
     <img class="object-none hover:object-right-bottom bg-yellow-300 w-24 h-24" src="../assets/img/i (1).jpg">
 </div>
 ```
+
+## overflow
+> Utilitaires permettant de contrôler la manière dont un élément gère le contenu trop volumineux pour le conteneur.
+
+Classes | props
+---|---
+__overflow-auto__ | ``overflow: auto;``
+__overflow-hidden__ | ``overflow: hidden;``
+__overflow-clip__ | ``overflow: clip;``
+__overflow-visible__ | ``overflow: visible;``
+__overflow-scroll__ | ``overflow: scroll;``
+__overflow-x-auto__ | ``overflow-x: auto;``
+__overflow-y-auto__ | ``overflow-y: auto;``
+__overflow-x-hidden__ | ``overflow-x: hidden;``
+__overflow-y-hidden__ | ``overflow-y: hidden;``
+__overflow-x-clip__ | ``overflow-x: clip;``
+__overflow-y-clip__ | ``overflow-y: clip;``
+__overflow-x-visible__ | ``overflow-x: visible;``
+__overflow-y-visible__ | ``overflow-y: visible;``
+__overflow-x-scroll__ | ``overflow-x: scroll;``
+__overflow-y-scroll__ | ``overflow-y: scroll;``
+
+## overscroll behavior
+> Utilitaires permettant de contrôler le comportement du navigateur lorsqu'il atteint la limite d'une zone de défilement.
+
+Classes  | props | commentaire
+---|---|---
+__overscroll-auto__ | ``overscroll-behavior: auto;`` | ---
+__overscroll-contain__ | ``overscroll-behavior: contain;`` | l'effet de dépassement de défilement ne se propagera pas à l'extérieur si l'user fait defiler au-delà des limites de l'element
+__overscroll-none__ | ``overscroll-behavior: none;`` | desactive completement l'effet de defilement depassant la  limite du l'element
+__overscroll-y-auto__ | ``overscroll-behavior-y: auto;``
+__overscroll-y-contain__ | ``overscroll-behavior-y: contain;``
+__overscroll-y-none__ | ``overscroll-behavior-y: none;``
+__overscroll-x-auto__ | ``overscroll-behavior-x: auto;``
+__overscroll-x-contain__ | ``overscroll-behavior-x: contain;``
+__overscroll-x-none__ | ``overscroll-behavior-x: none;``
+
+
+## Positionnement
+__static__ | ``position: static;``
+__fixed__ | ``position: fixed;``
+__absolute__ | ``position: absolute;``
+__relative__ | ``position: relative;``
+__sticky__ | ``position: sticky;``
+
+## Placement de l'element positionnée
+* ``[top|right|bottom|left|inset|start|end]-[size]``
+* size:
+  * auto: auto
+  * 0: 0px
+  * px: 1px;
+  * size en nombre: 1unité = 0.25rem = 4px
+  * 1/2 et 2/4: 50%;
+  * 1/3: 33.33333%; 
+  * 2/3: 66.66666%; 
+  * 1/4: 25%;
+  * 3/4: 75%; 
+  * full: 100%;
+quelque classe et props speciaux où 1 unité = 0.25rem = 4px:
+class | properties
+---|---
+``inset-x-{value}`` | left et right à {value} unité
+``inset-y-{value}`` | top et bottom à {value} unité
