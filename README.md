@@ -402,3 +402,39 @@ pour l'utiliser: z-zato
     <div class="teste hover:z-zato p-5 right-28">01</div>
 </div>
 ```
+
+# Flexbox and Grid
+## Flex basis
+> Définit la taille initiale de l'élément flexible, mais cette taille peut changer en fonction de l'espace disponible et des règles de flexbox.
+* basis-$value oùu $value:
+  * 0 à 12, 
+  * 14, 16, 20, 24, 32, 36, 40, 44, 48, 52, 56, 60, 64, 72, 80, 96(1 = 0.25rem = 4px)
+  * auto
+  * px(1px)
+  * 0.5, 1.5, 2.5, 3.5
+  * 1/2, 1/3, 2/3, 1/4, 3/4, ...: valeur en pourcentage pareil que precedent
+  * full: 100%
+
+## flex direction
+``flex-[row|row-reverse|col|col-reverse]``
+
+## flex wrap
+flex-[wrap|wrap-reverse|nowrap]
+
+## flex
+
+class | props | details
+---|---|---
+flex-1 | flex: 1 1 0%; | flex-grow à 1 et flex-shrink à 1 donc rempli l'espace disponible. La valeur 0% spécifie que la taille de base de l'élément est de 0, ce qui signifie qu'il peut rétrécir pour s'ajuster à l'espace disponible.
+flex-auto | flex: 1 1 auto; | meme que flex-1 sauf que, grace à auto, retrecissement si necessaire tout en conservant sa taille de base 
+flex-initial | flex: 0 1 auto; | flex-grow: 0; mais possibilité de retrecir, taille debase auto, ce qui signifie qu'il conservera sa taille initiale
+flex-none | flex: none; | desactive la flexibilité de l'element; ne peut pas s'étendre ni rétrécir en fonction de l'espace dispo, mais sa conserve taille de initiale
+
+### Comprehension de flex-grow
+* Definit la capacité d'un element flexible à grandir
+* Valeur numérique, 0 par défaut, 
+* si tout chaque element a 1, ils se repartissent l'espace disponible de manière egale
+* si un element a 2 et les autres 1 alors l'element qui a 2 occupe 2x plus d'espace que les autres
+### Comprehension de flex-shrink
+* flex shrink est comme flex-grow sauf que c'est retrecissement
+
