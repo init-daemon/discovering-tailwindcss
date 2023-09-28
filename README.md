@@ -427,14 +427,66 @@ class | props | details
 ---|---|---
 flex-1 | flex: 1 1 0%; | flex-grow à 1 et flex-shrink à 1 donc rempli l'espace disponible. La valeur 0% spécifie que la taille de base de l'élément est de 0, ce qui signifie qu'il peut rétrécir pour s'ajuster à l'espace disponible.
 flex-auto | flex: 1 1 auto; | meme que flex-1 sauf que, grace à auto, retrecissement si necessaire tout en conservant sa taille de base 
-flex-initial | flex: 0 1 auto; | flex-grow: 0; mais possibilité de retrecir, taille debase auto, ce qui signifie qu'il conservera sa taille initiale
+flex-initial | flex: 0 1 auto; | flex-grow: 0; mais possibilité de retrecir, taille debase auto, ce qui signifie qu'il conservera sa taille initiale. Valeur par défaut des enfants de .display flex;
 flex-none | flex: none; | desactive la flexibilité de l'element; ne peut pas s'étendre ni rétrécir en fonction de l'espace dispo, mais sa conserve taille de initiale
 
-### Comprehension de flex-grow
-* Definit la capacité d'un element flexible à grandir
-* Valeur numérique, 0 par défaut, 
-* si tout chaque element a 1, ils se repartissent l'espace disponible de manière egale
-* si un element a 2 et les autres 1 alors l'element qui a 2 occupe 2x plus d'espace que les autres
-### Comprehension de flex-shrink
-* flex shrink est comme flex-grow sauf que c'est retrecissement
+### Comprehension de flex
+```html
+<div class="parent">
+  <div class="child">Child</div>
+  <div class="child">Child</div>
+  <div class="child">Child</div>
+</div>
+<style>
+  .parent {
+    display: flex;
+  }
+</style>
+```
+avec parent en ``display: flex``, les enfants(``.child``) auront par défaut ``flex: 0 1 auto``:
+```css
+.child {
+  flex: 0 1 auto;/** flex-grow flex-shrink flex-basis */
+}
+```
+qui est equivaut à
+```css
+.child {
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+}
+```
+
+### Compréhension de flex-grow
+* Définit la capacité d'un élément flexible à grandir.
+* La valeur par défaut est 0.
+* Si tous les éléments ont une valeur de 1, ils se répartissent l'espace disponible de manière égale.
+* Si un élément a une valeur de 2 et les autres ont 1, alors l'élément avec une valeur de 2 occupe deux fois plus d'espace que les autres.
+
+### Compréhension de flex-shrink
+* Définit la capacité d'un élément flexible à rétrécir.
+* La valeur par défaut est 1, ce qui signifie qu'il peut rétrécir si nécessaire.
+* Si un élément a une valeur de 2 en flex-shrink, il aura une priorité plus élevée pour rétrécir par rapport à ceux ayant une valeur de 1 en flex-shrink
+
+## flex grow
+__flex-grow__: ``flex-grow: 1;``
+__flex-grow-0__: ``flex-grow: 0;``
+
+## flex shrink
+* shrink
+* shrink-0
+```html
+<div class="flex bg-orange-500 w-full">
+    <div class="w-full bg-slate-200 shrink-0"><!--gardera la taille à width 100% et ne peut pas retrecir-->
+        01
+    </div>
+    <div class="w-full bg-slate-300">
+        02
+    </div>
+    <div class="w-full bg-slate-400">
+        03
+    </div>
+</div>
+```
 
