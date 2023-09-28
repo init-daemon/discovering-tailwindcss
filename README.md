@@ -470,8 +470,8 @@ qui est equivaut à
 * Si un élément a une valeur de 2 en flex-shrink, il aura une priorité plus élevée pour rétrécir par rapport à ceux ayant une valeur de 1 en flex-shrink
 
 ## flex grow
-__flex-grow__: ``flex-grow: 1;``
-__flex-grow-0__: ``flex-grow: 0;``
+__grow__: ``flex-grow: 1;``
+__grow-0__: ``flex-grow: 0;``
 
 ## flex shrink
 * shrink
