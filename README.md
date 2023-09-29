@@ -489,4 +489,43 @@ __grow-0__: ``flex-grow: 0;``
     </div>
 </div>
 ```
+## Ordre: controller l'ordre de flex et grid item
+* ``ordre-$value``: 
+* $value:
+  * de 1 à 12.
+  * first: -9999
+  * last: 9999
+  * none: 0
 
+## Colonne de modèle de grille(grid)
+* `grid-cols-$nbr-column`: ``grid-template-columns: repeat($nbr-column, minmax(0, 1fr));``
+* $nbr-column:
+  * de 1 à 12
+  * none: ``grid-template-columns: none;``
+```html
+<div class="3bg-orange-500 grid grid-cols-2">
+    <div class="bg-slate-200 h-20">
+        01
+    </div>
+    <div class="bg-slate-300 h-20">
+        02
+    </div>
+    <div class="bg-slate-400 h-20">
+        03
+    </div>
+</div>
+```
+
+## Grid Column Start / End
+* ``col-$value``
+* ``$value``
+  * auto: ``grid-column: auto``
+  * span-$n: où $n de 1 à 12 `grid-column: span $n / span $n;`
+  * span-full: ``grid-column: 1 / -1;``
+  * start-$n: où $n de 1 à 13: 	``grid-column-start: $n;``
+  * start-auto: `	grid-column-start: auto;`
+  * end-$n: où $n de 1 à 13: `grid-column-end: $n;`
+  * end-auto: `	grid-column-end: auto;`
+* ``span`` : Spécifie combien de colonnes un élément doit occuper dans la grille.
+* ``start`` : Spécifie le point de départ (la colonne de départ) d'un élément dans la grille.
+* ``end`` : Spécifie le point de fin (la colonne de fin) d'un élément dans la grille.

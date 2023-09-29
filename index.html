@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        let link = document.createElement("link");
+        link.rel = "stylesheet";
+        link.href = "../dist/output.css?version=" + Math.random();
+        document.querySelector("head").append(link);
+    </script>
+    <style>
+        .teste {
+            border: black solid 2px;
+            border-radius: 100%;
+            background-color: aquamarine;
+            position: relative;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bg-orange-500 grid grid-cols-3 gap-2">
+        <div class="bg-slate-200">01</div>
+        <div class="bg-red-800">02</div>
+        <div class="bg-slate-400">03</div>
+        <div class="bg-amber-500 col-start-3">04</div>
+        <div class="bg-slate-500 ">05</div>
+        <div class="bg-orange-200">06</div>
+        <div class="bg-orange-300">07</div>
+    </div>
+
+
+</body>
+
+</html>

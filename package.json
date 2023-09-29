@@ -1,5 +1,10 @@
 {
   "devDependencies": {
     "tailwindcss": "^3.3.3"
+  },
+  "scripts": {
+    "build": "npx tailwindcss -i ./src/input.css -o ./dist/output.css",
+    "dev": "npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch | npx live-server",
+    "watch": "npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch | npx live-server"
   }
 }
