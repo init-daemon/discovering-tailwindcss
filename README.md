@@ -1,5 +1,27 @@
 "# discovering-taillwindcss" 
 > Les titres contenant ? ont besoin d'exmple concret plus precis et claire
+
+* En tailwind, les valeurs en chiffres sont dans la plupart des cas, voici les $n-default:
+  * $px = 1px
+  * ``0.5, 1, 1.5, 2, 2.5, 3, 3.5, de 4 à 12, 14, 16, 20, 24, 28, 32, 36, 40, 44, 48, 52, 56, 60, 64, 72, 80, 96``
+  * pourcentage:
+    * resultat: paramètre
+    * 8.33333%: ``1/12``
+    * 16.6666%: ``1/6``
+    * 20%: ``1/5``
+    * 25%: ``1/4``
+    * 33.3333%: ``1/3``
+    * 40%: ``2/5``
+    * 41.6666%: ``5/12``
+    * 50%: ``1/2``
+    * 58.3333%: ``7/12``
+    * 60%: ``3/5``
+    * 66.6666%: ``2/3``
+    * 75%: ``3/4``
+    * 80%: ``4/5``
+    * 83.3333%: ``5/6``
+    * 91.6666%: ``11/12``
+    * 100%: ``full``
 # Editor setup
 ## Pour VSCode: 
 Taillwind CSS IntelliSense
@@ -517,6 +539,7 @@ __grow-0__: ``flex-grow: 0;``
 ```
 
 ## Grid Column Start / End
+> control de la colonne de grille
 * ``col-$value``
 * ``$value``
   * auto: ``grid-column: auto``
@@ -529,3 +552,165 @@ __grow-0__: ``flex-grow: 0;``
 * ``span`` : Spécifie combien de colonnes un élément doit occuper dans la grille.
 * ``start`` : Spécifie le point de départ (la colonne de départ) d'un élément dans la grille.
 * ``end`` : Spécifie le point de fin (la colonne de fin) d'un élément dans la grille.
+
+## Grid template row: nombre de ligne
+> definir le nombre de ligne dans une grille
+* `` grid-rows-$n`` où $n égale au nombre de ligne, utilisé avec `grid-flow-col` et ``row``
+
+## Grid Row Start / End
+> control de ligne de grille
+* ``row-$value``
+  * $value:
+    * span-$n: où $n de 1 à 6: `grid-row: span $n / span $n;`
+    * span-full: `grid-row: 1 / -1;`
+    * start-$n:  où $n de 1 à 7, ``grid-row-end: auto;``
+    * start-auto: ``grid-row-start: auto;``
+    * end-$n:  où $n de 1 à 7, `grid-row-end: $n;`
+    * end-auto: ``grid-row-end: auto;``
+
+* ``span`` : Spécifie combien de lignes un élément doit occuper dans la grille.
+* ``start`` : Spécifie le point de départ (la ligne de départ) d'un élément dans la grille.
+* ``end`` : Spécifie le point de fin (la ligne de fin) d'un élément dans la grille.
+
+## 	grid-auto-flow 
+> Control du comportement de placement des éléments lorsque la taille de la grille est insuffisante pour les accueillir tous.
+* ``grid-flow-[row|col|dense|row-dense|col-dense]``
+* ``$value``
+  * ``row``: Les éléments supplémentaires sont positionnés automatiquement sur de nouvelles lignes.
+  * ``col``: Les éléments supplémentaires sont positionnés automatiquement sur de nouvelles colonnes.
+  * ``dense``: Les éléments supplémentaires sont positionnés automatiquement en essayant de remplir les espaces vides, en réorganisant les éléments pour s'adapter aux trous.
+  * ``row-dense``: Les éléments supplémentaires sont positionnés automatiquement sur de nouvelles lignes, en essayant de remplir les espaces vides.
+  * ``col-dense``: Les éléments supplémentaires sont positionnés automatiquement sur de nouvelles colonnes, en essayant de remplir les espaces vides.
+
+
+## Grid Auto Columns
+...
+## Grid Auto Rows
+...
+## Gap
+...
+## Justify content
+...
+## Justify Items
+...
+## Justify self
+...
+## Align Content
+...
+## Align Items
+...
+## Align Self
+...
+## Place Content
+...
+## Place Items
+...
+## Place Self
+
+# SPACING
+## Padding, margin
+``[p|m]-$value``: p pour padding et m pour margin
+* $value:
+  * 0: 0px
+  * x-0: [padding|margin] left et right à 0px
+  * y-0: [padding|margin] top et bottom à 0px
+  * [s|e|t|r|b|l]-0: respectivement ``[padding|margin]-line-[start|end]: 0px;``,  ``[padding|margin]-[top|right|bottom|left]: 0px;``
+  * px: ``[padding|margin]: 1px;``
+  * [x|y|s|e|t|r|b|l]-px: de 1px
+  * [x|y|s|e|t|r|b|l]-$n et $n seulement: où $n = 0.5, 1, 1.5, 2, 2.5, 3, 3.5, de 4 à 12, 14, 16, 20, 24, 28, 32, 36, 40, 44, 48, 52, 56, 60, 64, 72, 80, 96
+
+## Space Between
+> permet de controller les espaces entre les elements enfant
+* ``space-$value``
+* $value:
+  * [x|y]-$n
+  * [x|y]-reverse
+
+# SIZING
+## width, Height
+[w|h]-$value
+* $value:
+  * $n-default
+  * screen: 100vw
+  * min: min-content
+  * max: max-content
+  * fit: fit-content
+
+## Min Width, Min Height
+* min-[w|h]-$value
+* $value:
+  * 0: 0px
+  * full: 100%
+  * min: min-content
+  * max: max-content
+  * fit: fit-content
+
+## Max Width,  Max Height
+### Max width et max height
+Classe | Propriétés
+---|---
+max-[w|h]-full | max-width: 100%;
+max-[w|h]-min | max-width: min-content;
+max-[w|h]-max | max-width: max-content;
+max-[w|h]-fit | max-width: fit-content;
+
+### Max width seulement
+Classe | Propriétés
+---|---
+max-w-xs | max-width: 20rem; /* 320px */
+max-w-0 | max-width: 0rem; /* 0px */
+max-w-none | max-width: none;
+max-w-sm | max-width: 24rem; /* 384px */
+max-w-md | max-width: 28rem; /* 448px */
+max-w-lg | max-width: 32rem; /* 512px */
+max-w-xl | max-width: 36rem; /* 576px */
+max-w-2xl | max-width: 42rem; /* 672px */
+max-w-3xl | max-width: 48rem; /* 768px */
+max-w-4xl | max-width: 56rem; /* 896px */
+max-w-5xl | max-width: 64rem; /* 1024px */
+max-w-6xl | max-width: 72rem; /* 1152px */
+max-w-7xl | max-width: 80rem; /* 1280px */
+max-w-prose | max-width: 65ch;
+max-w-screen-sm | max-width: 640px;
+max-w-screen-md | max-width: 768px;
+max-w-screen-lg | max-width: 1024px;
+max-w-screen-xl | max-width: 1280px;
+max-w-screen-2xl | max-width: 1536px;
+
+### Max height seulement
+Classe | Propriétés
+max-h-px | max-height: 1px;
+max-h-0.5 | max-height: 0.125rem; /* 2px */
+max-h-1 | max-height: 0.25rem; /* 4px */
+max-h-1.5 | max-height: 0.375rem; /* 6px */
+max-h-2 | max-height: 0.5rem; /* 8px */
+max-h-2.5 | max-height: 0.625rem; /* 10px */
+max-h-3 | max-height: 0.75rem; /* 12px */
+max-h-3.5 | max-height: 0.875rem; /* 14px */
+max-h-4 | max-height: 1rem; /* 16px */
+max-h-5 | max-height: 1.25rem; /* 20px */
+max-h-6 | max-height: 1.5rem; /* 24px */
+max-h-7 | max-height: 1.75rem; /* 28px */
+max-h-8 | max-height: 2rem; /* 32px */
+max-h-9 | max-height: 2.25rem; /* 36px */
+max-h-10 | max-height: 2.5rem; /* 40px */
+max-h-11 | max-height: 2.75rem; /* 44px */
+max-h-12 | max-height: 3rem; /* 48px */
+max-h-14 | max-height: 3.5rem; /* 56px */
+max-h-16 | max-height: 4rem; /* 64px */
+max-h-20 | max-height: 5rem; /* 80px */
+max-h-24 | max-height: 6rem; /* 96px */
+max-h-28 | max-height: 7rem; /* 112px */
+max-h-32 | max-height: 8rem; /* 128px */
+max-h-36 | max-height: 9rem; /* 144px */
+max-h-40 | max-height: 10rem; /* 160px */
+max-h-44 | max-height: 11rem; /* 176px */
+max-h-48 | max-height: 12rem; /* 192px */
+max-h-52 | max-height: 13rem; /* 208px */
+max-h-56 | max-height: 14rem; /* 224px */
+max-h-60 | max-height: 15rem; /* 240px */
+max-h-64 | max-height: 16rem; /* 256px */
+max-h-72 | max-height: 18rem; /* 288px */
+max-h-80 | max-height: 20rem; /* 320px */
+max-h-96 | max-height: 24rem; /* 384px */
+max-h-screen | max-height: 100vh;
