@@ -22,6 +22,11 @@
     * 83.3333%: ``5/6``
     * 91.6666%: ``11/12``
     * 100%: ``full``
+* les couleurs en tailwindcss, $default-color:
+  * transparent
+  * black
+  * white
+  * [slate|gray|zinc|neutral|stone|red|orange|amber|yellow|lime|green|emerald|teal|cyan|sky|blue|indigo|violet|purple|fushia|pink|rose]-[50|100|200|300|400|500|600|700|800|900|950]
 # Editor setup
 ## Pour VSCode: 
 Taillwind CSS IntelliSense
@@ -682,3 +687,146 @@ Classe | Propriétés
 max-h-px | max-height: 1px;
 max-h-screen | max-height: 100vh;
 max-h-$n-default sans pourcentage | max-height: $n-default*0.25rem;
+
+
+# Typographie
+## font family
+* ``font-sans``
+* ``font-serif``
+* ``font-mono``
+
+### Font family de base personnaléis
+```css
+@layer base {
+  html {
+    font-family: Proxima Nova, system-ui, sans-serif;
+  }
+}
+```
+
+### configurer une nouvelle groupe de font family
+```js tailwind.config.js
+//tailwind.config.js
+const defaultTheme = require('tailwindcss/defaultTheme')
+
+module.exports = {
+  theme: {
+    extend: {
+      fontFamily: {
+        'sans': ['Proxima Nova', ...defaultTheme.fontFamily.sans],
+      },
+    }
+  }
+}
+```
+
+## font size
+* ``text-[sm|base|lg|xl|[2-9]xl]``
+
+## font style
+* italic
+* not-italic
+
+## font weight
+font-[thin|extralight|light|normal|medium|semibold|bold|extrabold|black]
+
+## Letter spacing
+Classe | propriétés
+---|---
+tracking-tighter | letter-spacing: -0.05em;
+tracking-tight | letter-spacing: -0.025em;
+tracking-normal | letter-spacing: 0em;
+tracking-wide | letter-spacing: 0.025em;
+tracking-wider | letter-spacing: 0.05em;
+tracking-widest | letter-spacing: 0.1em;
+
+## Line height
+Classe | propriétés
+---|---
+leading-3 | line-height: .75rem; /* 12px */
+leading-4 | line-height: 1rem; /* 16px */
+leading-5 | line-height: 1.25rem; /* 20px */
+leading-6 | line-height: 1.5rem; /* 24px */
+leading-7 | line-height: 1.75rem; /* 28px */
+leading-8 | line-height: 2rem; /* 32px */
+leading-9 | line-height: 2.25rem; /* 36px */
+leading-10 | line-height: 2.5rem; /* 40px */
+
+## List style image
+* __list-image-none__: `list-style-image: none;`
+* list-image-{valalue}:
+ ```htmk
+ <ul class="list-image-[url(checkmark.png)] ...">
+  <li>5 cups chopped Porcini mushrooms</li>
+  </ul>
+ ```
+
+## List style position
+list-inside
+list-outside
+
+## Text align
+text-[left|center|right|justify|start|end]
+
+## text-color
+* text-inherit
+* text-$color
+  * $color : $default-color
+
+## Text decoration
+underline
+overline
+line-through
+no-underline
+
+## Text decoration color
+decoration-$default-color
+
+## Text Decoration style
+deocration-[solid|double|dotted|dashed|wavy]
+
+## Text decoration thickness
+decoration-[auto|from-font|0-2|4|8]
+
+## Text underline offset
+> Controlle la distance entre le soulignement et le text en question
+underline-offset-[auto|0-2|4|8]
+
+## Text transform
+uppercase
+lowercase
+capitalize
+normale-case
+
+## Text overflow
+> Controller  le comportement du  texte lorsqu'il depasse le bloc
+* truncate: une ligne et ajoute trois point de suspension à la fin de ligne.
+  ```css
+  .truncate {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap
+  }
+  ```
+* text-ellipsis: ``text-overflow: ellipsis``
+* text-clip: ``text-overflow: clip;``
+
+## Text indent
+> Control le comportement de l'indentation du text
+``indent-$n-default``
+
+## Vertical align
+* ``align-[baseline|top|middle|bottom|text-top|text-bottom|sub|super]``
+
+## White space
+* ``whitespace-[normal|nowrap|pre|pre-line|pre-wrap|break-spaces]``
+
+## word break
+* break-[normal|words|all|keep]
+
+## Hyphens: Trait d'union
+* ``hyphens-[none|manual|auto]``
+
+## Content
+> Permet de controller le contenu avant ou apres un pseudo-elements
+* ``content-none``
