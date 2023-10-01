@@ -27,6 +27,7 @@
   * black
   * white
   * [slate|gray|zinc|neutral|stone|red|orange|amber|yellow|lime|green|emerald|teal|cyan|sky|blue|indigo|violet|purple|fushia|pink|rose]-[50|100|200|300|400|500|600|700|800|900|950]
+  * arbitrary value :  [hexaColor]
 # Editor setup
 ## Pour VSCode: 
 Taillwind CSS IntelliSense
@@ -830,3 +831,70 @@ normale-case
 ## Content
 > Permet de controller le contenu avant ou apres un pseudo-elements
 * ``content-none``
+* ``content-$value``
+```html
+<a class="text-sky-400 after:content-['_↗'] ..." href="https://www.
+apple.com/pro-display-xdr/" target="_blank">...</a>
+```
+* utiliser une valeur d'un attribut:
+```html
+<div before="Hello World" class="before:content-[attr(before)]">
+  <!-- ... -->
+</div>
+```
+
+# Backougrounds
+## Background attachement
+* ``bg-[fixed|local|scroll]``
+
+## background clip
+> Utilitaires pour contrôler la boîte de délimitation de l'arrière-plan d'un élément.
+Classes |  Props
+---|---
+bg-clip-border | background-clip: border-box;
+bg-clip-padding | background-clip: padding-box;
+bg-clip-content | background-clip: content-box;
+bg-clip-text | background-clip: text;
+
+## Background color
+* ``bg-$default-color``
+```html
+  <!-- ..arbitrary value -->
+<p class="bg-[#50d71e]">
+  <!-- ... -->
+</p>
+```
+## Background origin
+> Utilitaires pour contrôler la position de l'arrière-plan d'un élément par rapport aux margins, padding et au content.
+``bg-origin-[border|padding|content]``
+
+## background position
+* bg-[bottom|center|left|left-bottom|left-top|right|right-bottom|right-top|top]
+
+## background repeat
+* ``bg-repeat``
+* ``bg-repeat-[x|y|round|space]``
+* ``bg-no-repeat``
+
+## Background size
+``bg-[auto|cover|contain]``
+
+## Background Image
+Classes | Value
+---|---
+bg-none | background-image: none;
+bg-gradient-to-t | background-image: linear-gradient(to top, var(--tw-gradient-stops));
+bg-gradient-to-tr | background-image: linear-gradient(to top right, var(--tw-gradient-stops));
+bg-gradient-to-r | background-image: linear-gradient(to right, var(--tw-gradient-stops));
+bg-gradient-to-br | background-image: linear-gradient(to bottom right, var(--tw-gradient-stops));
+bg-gradient-to-b | background-image: linear-gradient(to bottom, var(--tw-gradient-stops));
+bg-gradient-to-bl | background-image: linear-gradient(to bottom left, var(--tw-gradient-stops));
+bg-gradient-to-l | background-image: linear-gradient(to left, var(--tw-gradient-stops));
+bg-gradient-to-tl | background-image: linear-gradient(to top left, var(--tw-gradient-stops));
+
+```html
+<div class="h-14 bg-gradient-to-r from-cyan-500 to-blue-500"></div>
+<div class="h-14 bg-gradient-to-r from-sky-500 to-indigo-500"></div>
+<div class="h-14 bg-gradient-to-r from-violet-500 to-fuchsia-500"></div>
+<div class="h-14 bg-gradient-to-r from-purple-500 to-pink-500"></div>
+```
