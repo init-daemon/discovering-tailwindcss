@@ -1,5 +1,5 @@
 /*
-! tailwindcss v3.3.3 | MIT License | https://tailwindcss.com
+! tailwindcss v3.4.1 | MIT License | https://tailwindcss.com
 */
 
 /*
@@ -32,9 +32,11 @@
 4. Use the user's configured `sans` font-family by default.
 5. Use the user's configured `sans` font-feature-settings by default.
 6. Use the user's configured `sans` font-variation-settings by default.
+7. Disable tap highlights on iOS
 */
 
-html {
+html,
+:host {
   line-height: 1.5;
   /* 1 */
   -webkit-text-size-adjust: 100%;
@@ -44,12 +46,14 @@ html {
   -o-tab-size: 4;
      tab-size: 4;
   /* 3 */
-  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   /* 4 */
   font-feature-settings: normal;
   /* 5 */
   font-variation-settings: normal;
   /* 6 */
+  -webkit-tap-highlight-color: transparent;
+  /* 7 */
 }
 
 /*
@@ -121,8 +125,10 @@ strong {
 }
 
 /*
-1. Use the user's configured `mono` font family by default.
-2. Correct the odd `em` font sizing in all browsers.
+1. Use the user's configured `mono` font-family by default.
+2. Use the user's configured `mono` font-feature-settings by default.
+3. Use the user's configured `mono` font-variation-settings by default.
+4. Correct the odd `em` font sizing in all browsers.
 */
 
 code,
@@ -131,8 +137,12 @@ samp,
 pre {
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   /* 1 */
-  font-size: 1em;
+  font-feature-settings: normal;
   /* 2 */
+  font-variation-settings: normal;
+  /* 3 */
+  font-size: 1em;
+  /* 4 */
 }
 
 /*
@@ -538,34 +548,12 @@ video {
   position: relative;
 }
 
-.h-44 {
-  height: 11rem;
-}
-
 .h-14 {
   height: 3.5rem;
 }
 
-.w-1\/2 {
-  width: 50%;
-}
-
-.overflow-hidden {
-  overflow: hidden;
-}
-
 .border {
   border-width: 1px;
-}
-
-.bg-slate-200 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(226 232 240 / var(--tw-bg-opacity));
-}
-
-.bg-\[\#213\] {
-  --tw-bg-opacity: 1;
-  background-color: rgb(34 17 51 / var(--tw-bg-opacity));
 }
 
 .bg-gradient-to-r {
@@ -612,32 +600,15 @@ video {
   --tw-gradient-to: #ec4899 var(--tw-gradient-to-position);
 }
 
-.bg-fixed {
-  background-attachment: fixed;
+.color {
+  color: red;
 }
 
-.bg-local {
-  background-attachment: local;
-}
-
-.bg-scroll {
-  background-attachment: scroll;
-}
-
-.bg-clip-border {
-  background-clip: border-box;
-}
-
-.indent-2 {
-  text-indent: 0.5rem;
-}
-
-.before\:content-\[\'Hello_World\'\]::before {
-  --tw-content: 'Hello World';
-  content: var(--tw-content);
-}
-
-.before\:content-\[\'Hello\\_World\'\]::before {
-  --tw-content: 'Hello_World';
-  content: var(--tw-content);
+.t {
+  border-bottom-right-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
+  --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  color: red;
 }

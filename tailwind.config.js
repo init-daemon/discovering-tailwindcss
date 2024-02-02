@@ -4,10 +4,9 @@ module.exports = {
   theme: {
     extend: {
       zIndex: {
-        'zato': '100',
-      }
+        zato: "100",
+      },
     },
   },
   plugins: [],
-}
-
+};
